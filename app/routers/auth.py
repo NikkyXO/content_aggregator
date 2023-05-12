@@ -4,7 +4,7 @@ import pyotp
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 import yagmail
-from app.settings.oauth import get_current_user, verify_access_token, create_access_token, authenticate_user
+from app.settings.oauth import get_current_active_user, verify_access_token, create_access_token, authenticate_user
 from datetime import timedelta
 from app.settings import utils, oauth
 from app.models.user import User

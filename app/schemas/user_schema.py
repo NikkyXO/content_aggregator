@@ -3,27 +3,17 @@ from typing import Optional, List
 
 
 class User(BaseModel):
-    user_id: int
+    user_id: int | None = None
     username: str
     first_name: str
     last_name: str
-    email: EmailStr
-    date_of_birth: str
-    gender: str
+    email: EmailStr | None = None
+    date_of_birth: str | None = None
+    gender: str | None = None
     description: str
-    image_url: str
-    phone_number: str
-    work_experience: str
-    position: str
-    stack: str
-    links: List[str]
-    role: str
-    following: str
-    followers: str
-    location: str
-    account_balance: int
-    tokens_earned: int
-    total_likes: int
+    image_url: str | None = None
+    phone_number: str | None = None
+    disabled: bool | None = None
     created_at: str
     is_admin: Optional[bool]
 

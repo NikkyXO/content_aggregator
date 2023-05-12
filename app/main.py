@@ -1,6 +1,7 @@
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import auth
+from app.routers import article
 # from api import user, notification, questions, auth, like, answer, following, tag
 
 #  Description of Context Aggregrator Api
@@ -32,7 +33,7 @@ The following methods are used in this api :-
 """
 
 app = FastAPI(
-    title="DEV ASK",
+    title="NEWS PODCAST",
     description=description
 )
 
@@ -48,13 +49,8 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
-# app.include_router(questions.router)
-# app.include_router(notification.router)
-# app.include_router(auth.router)
-# app.include_router(like.router)
-# app.include_router(answer.router)
-# app.include_router(following.router)
-# app.include_router(tag.router)
+app.include_router(article.router)
+
 
 @app.get("/")
 def read_root():
